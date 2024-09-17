@@ -1,0 +1,7 @@
+{
+  "name": "freelance-calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
