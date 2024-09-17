@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { FreelanceCalculatorComponent } from './freelance-calculator/freelance-calculator.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'calculator',
     pathMatch: 'full'
   },
+  {
+    path: 'calculator',
+    component: FreelanceCalculatorComponent
+  }
 ];
 
 @NgModule({

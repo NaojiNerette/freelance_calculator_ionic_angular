@@ -1,0 +1,39 @@
+<ion-content class="ion-padding">
+  <form [formGroup]="calculatorForm" (ngSubmit)="calculateRate()">
+    <ion-item>
+      <ion-label position="floating">Sueldo esperado anual</ion-label>
+      <ion-input type="number" formControlName="expectedSalary"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Días libres al año</ion-label>
+      <ion-input type="number" formControlName="freeDaysPerYear"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Días de enfermedad al año</ion-label>
+      <ion-input type="number" formControlName="sickDaysPerYear"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Porcentaje de tiempo en reuniones (%)</ion-label>
+      <ion-input type="number" formControlName="meetingsPercentage"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Gastos mensuales fijos</ion-label>
+      <ion-input type="number" formControlName="monthlyFixedExpenses"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Porcentaje de beneficio deseado (%)</ion-label>
+      <ion-input type="number" formControlName="desiredBenefitPercentage"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="!calculatorForm.valid">Calcular</ion-button>
+  </form>
+
+  <ion-item *ngIf="result > 0">
+    <ion-label>Tarifa por hora recomendada: {{result | currency}}</ion-label>
+  </ion-item>
+</ion-content>
